@@ -1,11 +1,12 @@
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Badge } from '@mui/material';
-import styled from "styled-components"
+import styled from "styled-components";
+import {mobile} from "../responsive";
 
 const Container = styled.div`
     height: 60px;
-    font-family: 'Urbanist', sans-serif;
+    ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${mobile({ padding: "10px 0" })}
 `;
 
 const Left = styled.div`
@@ -24,6 +26,7 @@ const Left = styled.div`
 const Language = styled.span`
     font-size: 14px;
     cursor: pointer;
+    ${mobile({ display: "none" })}
 `;
 
 const SearchContainer = styled.div`
@@ -39,6 +42,7 @@ const Input = styled.input`
     border: none;
     outline: none;
     font-family: 'Urbanist', sans-serif;
+    ${mobile({ width: "50px" })}
 `;
 
 const Center = styled.div`
@@ -48,6 +52,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
     font-weight: bold;
+    ${mobile({ fontSize: "24px" })}
 `;
 
 const Right = styled.div`
@@ -55,6 +60,7 @@ const Right = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    ${mobile({ justifyContent: "center", flex: "2" })}
 `;
 
 const MenuItem = styled.div`
@@ -62,6 +68,7 @@ const MenuItem = styled.div`
     cursor: pointer;
     margin-left: 25px;
     transition: .4s color ease-in-out;
+    ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 
     &:hover{
         color: gray;
@@ -76,7 +83,7 @@ function Navbar() {
                 <Left>
                     <Language>EN</Language>
                     <SearchContainer>
-                        <Input/>
+                        <Input placeholder="search"/>
                         <SearchIcon style={{color:"dark-gray", fontSize:16}}/>
                     </SearchContainer>
                 </Left>
